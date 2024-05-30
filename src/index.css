@@ -5,3 +5,27 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
+:root{
+  --chat-bg-color : rgba(17,25,40,0.75);
+  --chat-light-white : rgba(255,255,255,0.155);
+}
+
+body{
+  background-image: url(/public/bg.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+}
+
+.container{
+  background-color: var(--chat-bg-color);
+  width: 90vw;
+  height: 90vh;
+  border-radius: 15px;
+  border: 1px solid var(--chat-light-white);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+}
