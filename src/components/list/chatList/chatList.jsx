@@ -7,6 +7,7 @@ function ChatList (){
 
     return(
         <div className='ChatList'>
+
             <div className="search">
                 <div className="searchBar">
                     <img src="/public/search.png" alt="" />
@@ -14,6 +15,50 @@ function ChatList (){
                 </div>
                 <img src={addMode? "/public/minus.png":"/public/plus.png"} alt="" className='add' onClick={ ()=> setAddMode(!addMode)}/>
             </div>
+
+            <div className="item">
+                <img src="/public/avatar.png" alt="" />
+                <div className="texts">
+                    <span>UserName</span>
+                    <p>Hello World</p>
+                </div>
+            </div>
+            <div className="item">
+                <img src="/public/avatar.png" alt="" />
+                <div className="texts">
+                    <span>UserName</span>
+                    <p>Hello World</p>
+                </div>
+            </div>
+            <div className="item">
+                <img src="/public/avatar.png" alt="" />
+                <div className="texts">
+                    <span>UserName</span>
+                    <p>Hello World</p>
+                </div>
+            </div>
+            <div className="item">
+                <img src="/public/avatar.png" alt="" />
+                <div className="texts">
+                    <span>UserName</span>
+                    <p>Hello World</p>
+                </div>
+            </div>
+            <div className="item">
+                <img src="/public/avatar.png" alt="" />
+                <div className="texts">
+                    <span>UserName</span>
+                    <p>Hello World</p>
+                </div>
+            </div>
+            <div className="item">
+                <img src="/public/avatar.png" alt="" />
+                <div className="texts">
+                    <span>UserName</span>
+                    <p>Hello World</p>
+                </div>
+            </div>
+
         </div>
     )
 }
