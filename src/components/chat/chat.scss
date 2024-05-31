@@ -120,7 +120,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 20px;
-        border-top: 1px solid #dddddd35;
+        border-top: var(--border-color-1);
         
         img{
             width: 20px;

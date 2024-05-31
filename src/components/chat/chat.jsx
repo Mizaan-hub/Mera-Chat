@@ -69,6 +69,116 @@ function Chat (){
                         <span>1 min ago</span>
                     </div>
                 </div>
+                <div className="message">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <img src="/public/pics/sample-neha-1.jpg" alt="" />
+                        <span>Just Now</span>
+                    </div>
+                </div>
+                <div className="message own">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <img src="/public/pics/sample-neha-2.jpg" alt="" />
+                        <span>Just Now</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                        <span>1 min ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                        <span>1 min ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                        <span>1 min ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                        <span>1 min ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                        <span>1 min ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                        <span>1 min ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                        <span>1 min ago</span>
+                    </div>
+                </div>
+                <div className="message">
+                    <img src="/public/avatar.png" alt="" />
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                    </div>
+                </div>
+                <div className="message own">
+                    <div className="texts">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus atque nulla ex nobis eveniet.</p>
+                        <span>1 min ago</span>
+                    </div>
+                </div>
             </div>
             <div className="bottom">
                 <div className="icons">

@@ -1,9 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  border: none;
+  outline: none;
   box-sizing: border-box;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  &::-webkit-scrollbar{
+    width: 0;
+  }
 }
 
 :root{
@@ -14,6 +20,8 @@
   --border-color-1 : 1px solid #dddddd35;
   --soft-gray: #a5a5a5;
   --btn-color: #5183fe;
+  --color-danger: rgba(230,74,105, 0.500);
+  --color-danger-dark: rgba(230,74,105, 0.800);
 }
 
 body{
