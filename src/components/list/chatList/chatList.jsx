@@ -13,7 +13,7 @@ function ChatList (){
                     <img src="/public/search.png" alt="" />
                     <input type="search"  placeholder='Search'/>
                 </div>
-                <img src={addMode? "/public/minus.png":"/public/plus.png"} alt="" className='add' onClick={ ()=> setAddMode(!addMode)}/>
+                <img src={addMode? "/public/minus.png":"/public/plus.png"} alt="" className='add' onClick={() => setAddMode(!addMode)}/>
             </div>
 
             <div className="item">
