@@ -1,11 +1,18 @@
 import EmojiPicker from 'emoji-picker-react'
 import './chat.scss'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function Chat (){
 
     const[open,setOpen]=useState(false)
     const[text,setText]=useState("")
+
+    const endRef = useRef(null);
+
+    useEffect(() => {
+        endRef.current?.scrollIntoView({ behavior: "instant" });
+
+    },[]);
 
     const handleEmoji = (e) =>{
         setText(text+" "+e.emoji)
@@ -179,6 +186,7 @@ function Chat (){
                         <span>1 min ago</span>
                     </div>
                 </div>
+                <div ref={endRef}></div>
             </div>
             <div className="bottom">
                 <div className="icons">
