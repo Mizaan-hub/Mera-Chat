@@ -2,4 +2,166 @@
     flex: 2;
     border-left: var(--border-color-1);
     border-right: var(--border-color-1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .top{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: var(--border-color-1);
+
+        .user{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .texts{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                span{
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+
+                p{
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: var(--soft-gray);
+                }
+            }
+        }
+
+        .icons{
+            display: flex;
+            gap: 20px;
+
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .center{
+        padding: 20px;
+        flex: 1;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+
+        .message{
+            max-width: 70%;
+            display: flex;
+            gap: 20px;
+
+            &.own{
+                align-self: flex-end;
+                .texts{
+
+                    P{
+                        background-color: var(--btn-color);
+                    }
+                }
+            }
+
+            img{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .texts{
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                gap: 5px;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                    object-fit: cover;
+                }
+
+                p{
+                    padding: 20px;
+                    background-color: var(--chat-bg-color-dim);
+                    border-radius: 10px;
+                }
+
+                span{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .bottom{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid #dddddd35;
+        
+        img{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .icons{
+            display: flex;
+            gap: 20px;
+
+        }
+
+        input{
+            flex: 1;
+            background-color: var(--chat-bg-color);
+            color: white;
+            border: none;
+            outline: none;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .emojis{
+            position: relative;
+
+            .picker{
+                position: absolute;
+                bottom: 50px;
+                left: 0;
+            }
+        }
+
+        .sendButton{
+            background-color: var(--btn-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
 }
