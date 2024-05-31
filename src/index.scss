@@ -28,4 +28,5 @@ body{
   border: 1px solid var(--chat-light-white);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
+  display: flex;
 }

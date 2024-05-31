@@ -1,8 +1,8 @@
 import './detail.scss'
 
-function detail (){
+function Detail (){
     return(
-        <div className='detail'>detail</div>
+        <div className='Detail'>Detail</div>
     )
 }
-export default detail
+export default Detail

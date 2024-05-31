@@ -1,8 +1,8 @@
 import './list.scss'
 
-function list (){
+function List (){
     return(
-        <div className='list'>list</div>
+        <div className='List'>List</div>
     )
 }
-export default list
+export default List

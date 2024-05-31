@@ -1,8 +1,8 @@
 import './chat.scss'
 
-function chat (){
+function Chat (){
     return(
-        <div className='chat'>chat</div>
+        <div className='Chat'>Chat</div>
     )
 }
-export default chat
+export default Chat
