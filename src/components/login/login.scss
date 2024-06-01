@@ -55,6 +55,15 @@
                 &:hover{
                     scale: 1.05;
                 }
+
+                &:disabled{
+                    background-color: var(--login-btn-disabled);
+                    cursor: not-allowed;
+
+                    &:hover{
+                        scale: 1;
+                    }
+                }
             }
         }
     }
