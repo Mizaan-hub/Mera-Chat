@@ -1,7 +1,7 @@
 import { auth } from '../../lib/firebase'
 import './detail.scss'
 
-function Detail (){
+const Detail = () => {
     return(
         <div className='Detail'>
 

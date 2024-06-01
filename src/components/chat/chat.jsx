@@ -2,7 +2,7 @@ import EmojiPicker from 'emoji-picker-react'
 import './chat.scss'
 import { useEffect, useRef, useState } from 'react'
 
-function Chat (){
+const Chat = () => {
 
     const[open,setOpen]=useState(false)
     const[text,setText]=useState("")

@@ -6,7 +6,7 @@ import { auth, db } from '../../lib/firebase'
 import { doc, setDoc } from 'firebase/firestore'
 import upload from '../../lib/upload'
 
-function Login (){
+const Login = () => {
 
     const [avatar,setAvatar] = useState({
         file:null,

@@ -1,7 +1,7 @@
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 
-function Notification (){
+const Notification = () => {
     return(
         <div className='Notification'>
             <ToastContainer position="bottom-right"/>

@@ -1,6 +1,6 @@
 import './addUser.scss'
 
-function AddUser (){
+const AddUser = () => {
     return(
         <div className='AddUser'>
             <form action="">

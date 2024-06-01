@@ -1,7 +1,7 @@
 import { useUserStore } from '../../../lib/userStore'
 import './userInfo.scss'
 
-function UserInfo (){
+const UserInfo = () => {
 
     const {currentUser} = useUserStore()
 

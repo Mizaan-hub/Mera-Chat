@@ -6,7 +6,7 @@ import { doc, getDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
 
 
-function ChatList (){
+const ChatList = () => {
 
     const[addMode, setAddMode] = useState(false);
     const[chats, setChats] = useState([]);
