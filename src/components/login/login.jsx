@@ -17,11 +17,15 @@ function Login (){
         }
     }
 
+    const handleLogin = e => {
+        e.preventDefault()
+    }
+
     return(
         <div className='Login'>
             <div className="item">
                 <h2>Welcome Back</h2>
-                <form action="">
+                <form onSubmit={handleLogin}>
                     <input type="email" name="email" placeholder="Enter Your Email" id="" />
                     <input type="password" name="password" placeholder="Enter Your Password" id="" />
                     <button>Sign In</button>
