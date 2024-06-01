@@ -7,7 +7,7 @@ export const useUserStore = create((set)=>({
     isLoading: true,
 
     fetchUserInfo: async (uid) => {
-        if (!uid) return(
+        if (!uid) return set(
             {
                 currentUser: null, isLoading: false
             }
@@ -25,7 +25,7 @@ export const useUserStore = create((set)=>({
             }
         } catch (error) {
             console.log(error);
-            return(
+            return set(
                 {
                     currentUser: null, isLoading: false
                 }
