@@ -16,7 +16,7 @@ const Chat = () => {
         file: null,
         url : ""
     })
-    const {chatId, user} = useChatStore();
+    const {chatId, user, isCurrentUserBlocked, isReceiverBlocked} = useChatStore();
     const {currentUser} = useUserStore();
 
     const endRef = useRef(null);
@@ -24,7 +24,7 @@ const Chat = () => {
     useEffect(() => {
         endRef.current?.scrollIntoView({ behavior: "instant" });
 
-    },[]);
+    });
 
     useEffect(() => {
         const unSub = onSnapshot(
@@ -122,9 +122,9 @@ const Chat = () => {
         <div className='Chat'>
             <div className="top">
                 <div className="user">
-                    <img src="/public/avatar.png" alt="" />
+                    <img src={user?.avatar||"/public/avatar.png"} alt="" />
                     <div className="texts">
-                        <span>Username</span>
+                        <span>{user?.username}</span>
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                 </div>
@@ -158,13 +158,18 @@ const Chat = () => {
                     <label htmlFor="file">
                         <img src="/public/img.png" alt="" />
                     </label>
-                    <input type="file" id="file" style={{display:"none"}} onChange={handleImg}/>
+                    <input type="file" id="file" style={{display:"none"}} onChange={handleImg}
+                    disabled={isCurrentUserBlocked || isReceiverBlocked}/>
                     <img src="/public/camera.png" alt="" />
                     <img src="/public/mic.png" alt="" />
                 </div>
-                <input type="text" placeholder='Type a message....' 
+                <input type="text" placeholder={
+                    isCurrentUserBlocked || isReceiverBlocked 
+                    ?'You Cannot Send Messages'
+                    :'Type a message....' }
                 value={text}
-                onChange={(e)=>setText(e.target.value)}/>
+                onChange={(e)=>setText(e.target.value)}
+                disabled={isCurrentUserBlocked || isReceiverBlocked}/>
                 <div className="emojis">
                     <img src="/public/emoji.png" alt="" 
                     onClick={() => setOpen(!open)}/>
@@ -172,7 +177,8 @@ const Chat = () => {
                     <EmojiPicker open={open} onEmojiClick={handleEmoji}/>
                     </div>
                 </div>
-                <button className="sendButton" onClick={handleSend}>Send</button>
+                <button className="sendButton" onClick={handleSend}
+                disabled={isCurrentUserBlocked || isReceiverBlocked}>Send</button>
             </div>
         </div>
     )
