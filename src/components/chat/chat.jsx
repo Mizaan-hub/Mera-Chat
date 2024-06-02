@@ -6,6 +6,7 @@ import {db} from '../../lib/firebase'
 import { useChatStore } from '../../lib/chatStore'
 import { useUserStore } from '../../lib/userStore'
 import upload from '../../lib/upload'
+import {format} from "timeago.js"
 
 const Chat = () => {
 
@@ -24,13 +25,13 @@ const Chat = () => {
     useEffect(() => {
         endRef.current?.scrollIntoView({ behavior: "instant" });
 
-    });
+    },[chat?.messages]);
 
     useEffect(() => {
         const unSub = onSnapshot(
             doc(db,"chats", chatId),
         (res) => {
-            setChat(res.data())
+            setChat(res.data());
         });
 
     return () =>{
@@ -141,7 +142,7 @@ const Chat = () => {
                     <div className="texts">
                         {message.img && <img src={message.img} alt="" />}
                         <p>{message.text}</p>
-                        {/* <span>{message}</span> */}
+                        <span>{format(message?.createdAt?.time)}</span>
                     </div>
                 </div>
             ))}
@@ -151,7 +152,7 @@ const Chat = () => {
                     <img src={img.url} alt="" />
                 </div>
             </div>}
-                <div ref={endRef}></div>
+            <div ref={endRef}></div>
             </div>
             <div className="bottom">
                 <div className="icons">
