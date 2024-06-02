@@ -11,6 +11,7 @@ const ChatList = () => {
 
     const[addMode, setAddMode] = useState(false);
     const[chats, setChats] = useState([]);
+    const[input, setInput] = useState("");
 
     const {currentUser} = useUserStore();
     const {changeChat, chatId} = useChatStore();
@@ -68,13 +69,18 @@ const ChatList = () => {
 
     }
 
+    const filteredChats = chats.filter(
+        (chat) => chat.user.username.toLowerCase().includes(input.toLowerCase())
+    )
+
     return(
         <div className='ChatList'>
 
             <div className="search">
                 <div className="searchBar">
                     <img src="/public/search.png" alt="" />
-                    <input type="search"  placeholder='Search'/>
+                    <input type="search"  placeholder='Search'
+                    onChange={(e) => setInput(e.target.value)}/>
                 </div>
                 <img src={addMode ? 
                     "/public/minus.png":
@@ -83,7 +89,7 @@ const ChatList = () => {
                     onClick={() => setAddMode(!addMode)}/>
             </div>
                 
-                {chats.map(chat => (
+                {filteredChats.map(chat => (
                     <div className="item" 
                     key={chat.chatId} 
                     onClick={() => handleSelect(chat)}
