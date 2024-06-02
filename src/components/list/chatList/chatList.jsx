@@ -4,6 +4,7 @@ import AddUser from './addUser/addUser';
 import { useUserStore } from '../../../lib/userStore';
 import { doc, getDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
+import { useChatStore } from '../../../lib/chatStore';
 
 
 const ChatList = () => {
@@ -12,12 +13,13 @@ const ChatList = () => {
     const[chats, setChats] = useState([]);
 
     const {currentUser} = useUserStore();
+    const {changeChat} = useChatStore();
 
     useEffect(() => {
         const unSub = onSnapshot(
             doc(db, "userChats", currentUser.id),
-            async (userCredential) => {
-                const data = userCredential.data();
+            async (res) => {
+                const data = res.data();
 
                 if(data && data.chats){
                     const items = data.chats;
@@ -42,6 +44,10 @@ const ChatList = () => {
         };
     }, [currentUser.id]);
 
+    const handleSelect = async (chat) =>{
+        changeChat(chat.chatId, chat.user)
+    }
+
     return(
         <div className='ChatList'>
 
@@ -58,7 +64,7 @@ const ChatList = () => {
             </div>
                 
                 {chats.map(chat => (
-                    <div className="item" key={chat.chatId}>
+                    <div className="item" key={chat.chatId} onClick={() => handleSelect(chat)}>
                     <img src={chat.user.avatar ||"/public/avatar.png"} alt="" />
                     <div className="texts">
                         <span>{chat.user.username}</span>
@@ -66,6 +72,8 @@ const ChatList = () => {
                     </div>
                 </div>
                 ))}
+
+
             {/* <div className="item">
                 <img src="/public/avatar.png" alt="" />
                 <div className="texts">
