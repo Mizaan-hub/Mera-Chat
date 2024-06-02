@@ -1,12 +1,30 @@
-import { arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore';
+import { arrayRemove, arrayUnion, doc, onSnapshot, query, where, updateDoc, collection } from 'firebase/firestore';
 import { useChatStore } from '../../lib/chatStore'
-import { auth, db } from '../../lib/firebase'
+import { auth, db} from '../../lib/firebase'
 import { useUserStore } from '../../lib/userStore';
 import './detail.scss'
+import { useEffect, useState } from 'react';
 
 const Detail = () => {
+
+    const[show, setShow] =useState(false)
     const{chatId, user, isCurrentUserBlocked, isReceiverBlocked, changeBlock} = useChatStore();
     const{currentUser} = useUserStore();
+    const [messages, setMessages] = useState([]);
+
+    useEffect(() => {
+        const q = query(collection(db, "chats", chatId, "messages"), where("type", "==", "image"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const messages = [];
+        querySnapshot.forEach((doc) => {
+            messages.push(doc.data());
+        });
+
+        setMessages(messages);
+        });
+        return () => unsubscribe();
+    }, [chatId]);
+
 
     const handleBlock = async () => {
         if (!user) return;
@@ -23,6 +41,10 @@ const Detail = () => {
             console.log(error);
         }
     };
+
+    const handleClick = () => {
+        setShow(!show)
+    }
 
     return(
         <div className='Detail'>
@@ -50,37 +72,20 @@ const Detail = () => {
                 <div className="option">
                     <div className="title">
                         <span>Shared Photos</span>
-                        <img src="/public/arrowDown.png" alt="" />
+                        <img src={show?"/public/arrowUp.png" :"/public/arrowDown.png"} alt="" 
+                        onClick={handleClick}/>
                     </div>
-                    <div className="photos">
-                        <div className="photoItem">
-                            <div className="photoDetail">
-                                <img src="/public/pics/sample-lana-1.jpg" alt="" />
-                                <span>sample-lana-1.jpg</span>
-                            </div>
-                            <img src="/public/download.png" alt="" className='icon'/>
-                        </div>
-                        <div className="photoItem">
-                            <div className="photoDetail">
-                                <img src="/public/pics/sample-lana-2.jpg" alt="" />
-                                <span>sample-lana-1.jpg</span>
-                            </div>
+                    <div className="photos" style={{ display: show? 'none' : 'block' }}>
+                        {messages.map((message, index) => (
+                            message.type === 'image' &&
+                            <div className="photoItem" key={index}>
+                                <div className="photoDetail">
+                                    <img src={message.url} alt="" />
+                                        <span>{message.caption}</span>
+                                </div>
                             <img src="/public/download.png" alt="" className='icon' />
-                        </div>
-                        <div className="photoItem">
-                            <div className="photoDetail">
-                                <img src="/public/pics/sample-neha-1.jpg" alt="" />
-                                <span>sample-neha-1.jpg</span>
                             </div>
-                            <img src="/public/download.png" alt="" className='icon' />
-                        </div>
-                        <div className="photoItem">
-                            <div className="photoDetail">
-                                <img src="/public/pics/sample-neha-2.jpg" alt="" />
-                                <span>sample-neha-2.jpg</span>
-                            </div>
-                            <img src="/public/download.png" alt="" className='icon' />
-                        </div>
+                            ))}
                     </div>
                 </div>
                 <div className="option">
