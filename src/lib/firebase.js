@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_API_KEY,
-    authDomain: "mera-chat-69.firebaseapp.com",
-    projectId: "mera-chat-69",
-    storageBucket: "mera-chat-69.appspot.com",
-    messagingSenderId: "115374613165",
-    appId: "1:115374613165:web:c450c0cf6ff346377a1c24"
+  apiKey: "AIzaSyCwnD5-rr4oL4MXIgSscaMBCLXHSgJRsj0",
+  authDomain: "chattify-24768.firebaseapp.com",
+  projectId: "chattify-24768",
+  storageBucket: "chattify-24768.appspot.com",
+  messagingSenderId: "500481709444",
+  appId: "1:500481709444:web:3cff832ca002de0b4af9d1"
 };
 
 const app = initializeApp(firebaseConfig);
