@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCwnD5-rr4oL4MXIgSscaMBCLXHSgJRsj0",
+  apiKey: import.meta.env.VITE_API_KEY ,
   authDomain: "chattify-24768.firebaseapp.com",
   projectId: "chattify-24768",
   storageBucket: "chattify-24768.appspot.com",
